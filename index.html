@@ -13,7 +13,7 @@
 
   <body>
     <div class="container app-container">
-      <div id="clock" @mousemove="fadeOut">
+      <div id="clock" @mousemove="fadeOut" :style="{cursor: fade ? 'none' : ''}">
 
         <div :class="{hide: true, description:true, fade: fade}">
           Tons of carbon emitted per second:
@@ -27,6 +27,7 @@
         </div>
         <div id="co2" class="countdown">
           {{co2Budget | pad(16)}}
+          <span class="units">Tons</span>
         </div>
 
         <div :class="{hide: true, description:true, fade: fade}">
