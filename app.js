@@ -52,6 +52,11 @@ const app = new Vue({
     this.setRemaining();
     this.countdown();
     this.fadeOut();
+
+    let now = (new Date()).getTime();
+    let start = this.startdate.getTime();
+    let seconds = Math.floor((now - start)/1000);
+    this.co2Budget = this.co2Budget - seconds * this.tonsPerSecond;
   },
   filters: {
     pad(val, total) {
