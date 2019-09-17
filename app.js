@@ -41,11 +41,12 @@ const app = new Vue({
     hours: null,
     minutes: null,
     seconds: null,
-    co2Budget: 349000000000,
+    co2Budget: 420000000000,
     tonsPerSecond: 1331,
     intervalTime: 100,
     fade: false,
-    deadline: new Date("Jan01, 2028 15:37:25"),
+    startdate: new Date("Jun10, 2018 00:00:00"),
+    deadline: new Date("Jun10, 2028 00:00:00"),
   },
   created() {
     this.setRemaining();
