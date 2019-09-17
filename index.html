@@ -15,46 +15,52 @@
     <div class="container app-container">
       <div id="clock" @mousemove="fadeOut" :style="{cursor: fade ? 'none' : ''}" v-cloak>
 
-        <div :class="{hide: true, description:true, fade: fade}">
-          Tons of carbon emitted per second
-        </div>
-        <div :class="{hide: true, data:true, fade: fade}" id="tons-per-second">
-          {{tonsPerSecond}}
-        </div>
-
-        <div :class="{hide: true, description:true, fade: fade}">
-          Carbon budget for 1.5 degrees warming
-        </div>
-        <div id="co2" class="countdown">
-          <div>{{co2Budget | pad(16)}}</div>
-          <div style="text-align: right"><span class="units">Tons</span></div>
+        <div class="yellow">
+          <div :class="{hide: true, description:true, fade: fade}">
+            Tons of carbon emitted per second
+          </div>
+          <div :class="{hide: true, data:true, fade: fade}" id="tons-per-second">
+            {{tonsPerSecond}}
+          </div>
         </div>
 
-        <div :class="{hide: true, description:true, fade: fade}">
-          Time remaining until the budget is used up
+        <div class="orange">
+          <div :class="{hide: true, description:true, fade: fade}">
+            Carbon budget for 1.5 degrees warming
+          </div>
+          <div id="co2" class="countdown">
+            <div>{{co2Budget | pad(0)}} <span style="font-size: 5vw">TONS</span></div>
+            <!-- <div style="text&#45;align: right"><span class="units">Tons</span></div> -->
+          </div>
         </div>
-        <div id="time-remaining" class="countdown">
-          <div class="years unit">
-            <span class="time">{{years|pad}}</span><span class="units">Years</span>
+
+        <div class="blue">
+          <div :class="{hide: true, description:true, fade: fade}">
+            Time remaining until the budget is used up
           </div>
-          :
-          <div class="months unit">
-            <span class="time">{{months|pad}}</span><span class="units">Months</span>
-          </div>
-          :
-          <div class="days unit">
-            <span class="time">{{days|pad}}</span><span class="units">Days</span>
-          </div>
-          :
-          <div class="hours unit">
-            <span class="time">{{hours|pad}}</span><span class="units">Hours</span>
-          </div>
-          :
-          <div class="minutes unit">
-            <span class="time">{{minutes|pad}}</span><span class="units">Minutes</span>
-          </div>
-          :
-          <div class="seconds unit"><span class="time">{{seconds|pad}}</span><span class="units">Seconds</span>
+          <div id="time-remaining" class="countdown">
+            <div class="years unit">
+              <span class="time">{{years|pad}}</span><span class="units">Years</span>
+            </div>
+            :
+            <div class="months unit">
+              <span class="time">{{months|pad}}</span><span class="units">Months</span>
+            </div>
+            :
+            <div class="days unit">
+              <span class="time">{{days|pad}}</span><span class="units">Days</span>
+            </div>
+            :
+            <div class="hours unit">
+              <span class="time">{{hours|pad}}</span><span class="units">Hours</span>
+            </div>
+            :
+            <div class="minutes unit">
+              <span class="time">{{minutes|pad}}</span><span class="units">Minutes</span>
+            </div>
+            :
+            <div class="seconds unit"><span class="time">{{seconds|pad}}</span><span class="units">Seconds</span>
+            </div>
           </div>
         </div>
       </div>
@@ -76,7 +82,7 @@
         <p>[api instructions]</p>
 
         <h2>Contact</h2>
-        <p>Climate Clock is by XXXXXX, YYYY, ZZZZZZ, QQQQQQQ, WWWWWW and EEEEEE. Contact us here.</p>
+        <p>Contact us here.</p>
       </div>
     </div>
 
