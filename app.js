@@ -93,7 +93,7 @@ const app = new Vue({
 
       this.fadeTimeout = setTimeout(() => {
         this.fade = true;
-      }, 3000)
+      }, 10000)
     },
   },
 });
