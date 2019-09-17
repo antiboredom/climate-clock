@@ -6,12 +6,12 @@ html,
 body {
   width: 100%;
   height: 100%;
-  font-family: sans-serif;
 }
 
 body {
   margin: 0;
   padding: 0;
+  font-family: sans-serif;
 }
 
 .app-container {
@@ -38,6 +38,10 @@ body {
   margin-top: 40px;
   margin-bottom: 10px;
   opacity: 0.7;
+}
+
+.description:first-child {
+  margin-top: 0;
 }
 
 #time-remaining {
@@ -90,4 +94,3 @@ body {
 .fade {
   opacity: 0;
 }
-
