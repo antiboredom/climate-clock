@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Climate Clock</title>
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <link rel="stylesheet" href="style.css?v=1.0" />
+  </head>
+
+  <body>
+    <div class="container app-container">
+      <div id="clock" @mousemove="fadeOut">
+
+        <div :class="{hide: true, description:true, fade: fade}">
+          Tons of carbon emitted per second:
+        </div>
+        <div :class="{hide: true, data:true, fade: fade}" id="tons-per-second">
+          {{tonsPerSecond}}
+        </div>
+
+        <div :class="{hide: true, description:true, fade: fade}">
+          Carbon budget for 1.5 degrees warming:
+        </div>
+        <div id="co2" class="countdown">
+          {{co2Budget | pad(16)}}
+        </div>
+
+        <div :class="{hide: true, description:true, fade: fade}">
+          Time remaining until the budget is used up:
+        </div>
+        <div id="time-remaining" class="countdown">
+          <div class="years unit">
+            <span class="time">{{years|pad}}</span><span class="units">Years</span>
+          </div>
+          :
+          <div class="months unit">
+            <span class="time">{{months|pad}}</span><span class="units">Months</span>
+          </div>
+          :
+          <div class="days unit">
+            <span class="time">{{days|pad}}</span><span class="units">Days</span>
+          </div>
+          :
+          <div class="hours unit">
+            <span class="time">{{hours|pad}}</span><span class="units">Hours</span>
+          </div>
+          :
+          <div class="minutes unit">
+            <span class="time">{{minutes|pad}}</span><span class="units">Minutes</span>
+          </div>
+          :
+          <div class="seconds unit"><span class="time">{{seconds|pad}}</span><span class="units">Seconds</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="about">
+        <h1>About</h1>
+      </div>
+    </div>
+
+    <script src="vue.js"></script>
+    <script src="countdown.min.js"></script>
+    <script src="p5.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
