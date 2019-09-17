@@ -44,7 +44,8 @@ body {
   margin-bottom: 10px;
   opacity: 1.0;
   font-size: 12px;
-  font-size: 1.5vw;
+  font-size: 1.0vw;
+  text-align: left;
 }
 
 .description:first-child {
@@ -71,6 +72,10 @@ body {
   font-kerning: none;
 }
 
+#tons-per-second {
+  text-align: left;
+}
+
 .unit {
   padding: 0.5vw;
   /* border: 1px solid red; */
@@ -85,7 +90,7 @@ body {
 
 .units {
   display: block;
-  font-size: 1.5vw;
+  font-size: 1.6vw;
 }
 
 .about {

@@ -26,8 +26,8 @@
           Carbon budget for 1.5 degrees warming
         </div>
         <div id="co2" class="countdown">
-          {{co2Budget | pad(16)}}
-          <span class="units">Tons</span>
+          <div>{{co2Budget | pad(16)}}</div>
+          <div style="text-align: right"><span class="units">Tons</span></div>
         </div>
 
         <div :class="{hide: true, description:true, fade: fade}">
