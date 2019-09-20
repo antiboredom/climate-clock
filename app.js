@@ -1,37 +1,3 @@
-// http://countdownjs.org/demo.html
-// https://github.com/albert-gonzalez/easytimer.js
-// we need to test energy consumption on different methods
-// we should make this a gif of some sort - something that's easy to embed without javascript
-function remainingTime(deadline) {
-  let now = new Date().getTime();
-  let t = deadline - now;
-  return {
-    days: Math.floor(t / (1000 * 60 * 60 * 24)),
-    hours: Math.floor((t % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
-    minutes: Math.floor((t % (1000 * 60 * 60)) / (1000 * 60)),
-    seconds: Math.floor((t % (1000 * 60)) / 1000),
-  };
-}
-
-function startCountdown() {
-  let deadline = new Date("Jan 5, 2020 15:37:25");
-  setInterval(() => {
-    let timeleft = countdown(
-      deadline,
-      new Date(),
-      countdown.DAYS | countdown.HOURS | countdown.MINUTES | countdown.SECONDS
-    );
-    console.log(timeleft);
-    let remaining = remainingTime(deadline.getTime());
-    console.log(remaining);
-  }, 1000);
-  // let deadline = new Date("Jan 5, 2020 15:37:25").getTime();
-  // setInterval(() => {
-  //   let remaining = remainingTime(deadline);
-  //   console.log(remaining);
-  // }, 1000);
-}
-
 const app = new Vue({
   el: "#clock",
   data: {
@@ -45,7 +11,7 @@ const app = new Vue({
     tonsPerSecond: 1331,
     intervalTime: 100,
     fade: false,
-    startdate: new Date("Jun10, 2018 00:00:00"),
+    startdate: new Date("2018-01-01 00:00:00+01:00"),
     deadline: new Date("Jun10, 2028 00:00:00"),
   },
   created() {
@@ -57,6 +23,8 @@ const app = new Vue({
     let start = this.startdate.getTime();
     let seconds = Math.floor((now - start)/1000);
     this.co2Budget = this.co2Budget - seconds * this.tonsPerSecond;
+
+    this.deadline = new Date((now + (this.co2Budget/this.tonsPerSecond)*1000))
   },
   filters: {
     pad(val, total) {
