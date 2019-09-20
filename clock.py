@@ -9,7 +9,6 @@ from rgbmatrix import RGBMatrix, RGBMatrixOptions, graphics
 
 
 START_DATE = datetime(2018, 1, 1, 2, 8, 6)  # estimated start date for the carbon budget
-START_DATE = datetime(2018, 1, 1, 8, 8, 6)  # estimated start date for the carbon budget
 START_BUDGET = 420000000000.0
 TONS_PER_SEC = 1331.0
 PAUSE = 1.0 / 3.0  # framerate
